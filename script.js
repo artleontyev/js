@@ -1,48 +1,25 @@
 'use strict';
 
-var number = 5;
-var string = "Hello!";
-var sym = Symbol();
-var boolean = true;
-null;
-undefined;
-var obj = {};
+let money,
+    time;
 
-console.log(4/0);
-console.log('string'/ 0);
+money = prompt ("Ваш бюджет на месяц?", '');
+time = prompt ("Введите дату в формате YYYY-MM-DD", '');
 
-let persone = {
-  name: "John",
-  age: 25,
-  isMarried: false
+let appData = {
+  budget: money,
+  timeData: time,
+  expenses: {},
+  income: [],
+  savings: false
 };
 
-console.log(persone["name"]);
+let exp1, 
+    exp2;
+exp1= prompt ("Введите обязательную статью расходов в этом месяце", '');
+appData.expenses[exp1] = prompt ("Во сколько обойдется?", '');
 
-let arr = ['plum.png','orenge.jpg','apple.bmp'];
-console.log (arr[2]);
+exp2 = prompt("Введите вторую обязательную статью расходов в этом месяце", '');
+appData.expenses[exp2] = prompt("Во сколько обойдется?", '');
 
-// alert("Hello World!");
-
-// let answer = confirm("Are you here?");
-
-// console.log(answer)
-
-// let answer = prompt("Есть ли вам 18", "Da");
-
-// console.log(typeof(null));
-
-let incr = 10,
-    decr = 10;
-
- 
-console.log(++incr);
-console.log(--decr);
-
-console.log(5%2);
-console.log("2"=== 2);
-
-let isChecked = true,
-    isClose = false;
-
-console.log(isChecked || !isClose)
+alert (`Вам понадобится ${appData.expenses[exp1]/30} рублей в день для ${exp1}\n и ${appData.expenses[exp2]/30} рублей в день для ${exp2}`);
